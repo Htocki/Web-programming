@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="local.css">
+    <title>Задание 1б</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_text">
+        Web-программирование<br>
+        Лабораторная работа 4
+      </div>
+    </header>
+    <main>
+      <p>3</p>
+      <p>15</p>
+      <p>10</p>
+      <p>20</p>
+      <button id="before" onclick="PrintWithSorting()">Вывести в инпут</button> 
+      <script>
+        function PrintWithSorting() {
+            let before = document.getElementById("before");
+            let elements = document.getElementsByTagName("p");
+            let numbers = [];
+            for (let element of elements) {
+                numbers.push(parseInt(element.innerHTML));
+            }
+            numbers.sort(Sort);
+            let input = document.createElement("input");
+            for (let i = 0; i < numbers.length; i++) {
+                input.value += numbers[i];
+                if (i < numbers.length - 1) {
+                    input.value += ", ";
+                }
+            }
+            before.parentElement.insertBefore(input, before); 
+        }
+        function Sort(a, b) {
+	          if (a > b) { return 1; }
+	          if (a < b) { return -1; }
+	          if (a == b) { return 0; }
+        }
+      </script>
+    </main>
+    <footer>
+      <div class="footer_text">
+        Задернюк В.А.<br>
+        КФ-4<br>
+        Вариант-4
+      </div>
+    </footer>
+  </body>
+</html>
