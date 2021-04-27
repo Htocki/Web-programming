@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../global.css">
+    <title>Задание 7</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_text">
+        Web-программирование<br>
+        Лабораторная работа 3
+      </div>
+    </header>
+    <main>
+      <div id="element_1">Элемент</div>
+      <script>
+        let element_1 = document.querySelector("#element_1");
+        element_1.insertAdjacentHTML('beforeBegin', '<span>!!!</span>');
+      </script>
+
+      <div id="element_2">Элемент</div>
+      <script>
+        let element_2 = document.querySelector("#element_2");
+        element_2.insertAdjacentHTML('afterEnd', '<span>!!!</span>');
+      </script>
+      
+      <div id="element_3">Элемент</div>
+      <script>
+        let element_3 = document.querySelector("#element_3");
+        element_3.insertAdjacentHTML('afterBegin', '<span>!!!</span>');
+      </script>
+
+      <div id="element_4">Элемент</div>
+      <script>
+        let element_4 = document.querySelector("#element_4");
+        element_4.insertAdjacentHTML('beforeEnd', '<span>!!!</span>');
+      </script>
+    </main>
+    <footer>
+      <div class="footer_text">
+        Задернюк В.А.<br>
+        КФ-4<br>
+        Вариант-4
+      </div>
+    </footer>
+  </body>
+</html>
