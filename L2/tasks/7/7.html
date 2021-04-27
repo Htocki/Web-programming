@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../global_style.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Задание 7</title>
+  </head>
+  <body onload="tc_start();um_start()">
+    <header>
+      <div class="header_text">
+        Web-программирование<br>
+        Лабораторная работа 2
+      </div>
+    </header>
+    <main>
+      <form>
+        Отсчет до бесконечности:<br>
+        <label id="cti_counter">0</label><br>
+        <input type="button" value="Начать" onclick="cti_start()">
+      </form>
+      <form>
+        Отсчет с кнопкой остановки:<br>
+        <label id="cws_counter">0</label><br>
+        <input type="button" value="Начать" onclick="cws_start()" id="cws_start_button">
+        <input type="button" value="Остановить" onclick="cws_stop()" id="cws_stop_button" disabled>
+      </form>
+      <form>
+        Тикающие часики:<br>
+        <label id="tc_clock">00:00:00</label><br>
+      </form>
+      <form>
+        Таймер обратного отсчета:<br>
+        <label id="ct_counter">10</label><br>
+        <input type="button" value="Начать" onclick="ct_start()" id="ct_button">
+      </form>
+      <form>
+        Отсчет до полуночи:<br>
+        <label id="um_hours">00</label>:<label id="um_minutes">00</label>:<label id="um_seconds">00</label><br>
+      </form>
+    </main>
+    <footer>
+      <div class="footer_text">
+        Задернюк В.А.<br>
+        КФ-4<br>
+        Вариант-4
+      </div>
+    </footer>
+    <script src="scripts/countdown_timer.js"></script>
+    <script src="scripts/countdown_to_infinity.js"></script>
+    <script src="scripts/countdown_with_stop.js"></script>
+    <script src="scripts/ticking_clock.js"></script>
+    <script src="scripts/until_midnight.js"></script>
+  </body>
+</html>
