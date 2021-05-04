@@ -4,6 +4,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="local.css">
     <title>Задание 3</title>
   </head>
   <body>
@@ -13,9 +14,125 @@
         Лабораторная работа 5
       </div>
     </header>
-    <main>
-
+    <main onload="Initialize()">
+      <div class="board">
+        <br>
+        <form>
+          Первый вопрос?<br>
+          <input id="rb_1_1" type="radio" name="question_1" value="true">
+          <label for="rb_1_1">правильный ответ</label><br>
+          <input id="rb_1_2" type="radio" name="question_1" value="false">
+          <label for="rb_1_2">неправильный ответ</label><br>
+          <input id="rb_1_3" type="radio" name="question_1" value="false">
+          <label for="rb_1_3">неправильный ответ</label><br>
+          <input id="rb_1_4" type="radio" name="question_1" value="false">
+          <label for="rb_1_4">неправильный ответ</label><br>
+          <input id="rb_1_5" type="radio" name="question_1" value="false">
+          <label for="rb_1_5">неправильный ответ</label><br>
+        </form>
+        <br>
+        <form>
+          Второй вопрос?<br>
+          <input id="rb_2_1" type="radio" name="question_2" value="false">
+          <label for="rb_2_1">неправильный ответ</label><br>
+          <input id="rb_2_2" type="radio" name="question_2" value="false">
+          <label for="rb_2_2">неправильный ответ</label><br>
+          <input id="rb_2_3" type="radio" name="question_2" value="true">
+          <label for="rb_2_3">правильный ответ</label><br>
+          <input id="rb_2_4" type="radio" name="question_2" value="false">
+          <label for="rb_2_4">неправильный ответ</label><br>
+          <input id="rb_2_5" type="radio" name="question_2" value="false">
+          <label for="rb_2_5">неправильный ответ</label><br>
+        </form>
+        <br>
+        <form>
+          Третий вопрос?<br>
+          <input id="rb_3_1" type="radio" name="question_3" value="false">
+          <label for="rb_3_1">неправильный ответ</label><br>
+          <input id="rb_3_2" type="radio" name="question_3" value="true">
+          <label for="rb_3_2">правильный ответ</label><br>
+          <input id="rb_3_3" type="radio" name="question_3" value="false">
+          <label for="rb_3_3">неправильный ответ</label><br>
+          <input id="rb_3_4" type="radio" name="question_3" value="false">
+          <label for="rb_3_4">неправильный ответ</label><br>
+          <input id="rb_3_5" type="radio" name="question_3" value="false">
+          <label for="rb_3_5">неправильный ответ</label><br>
+        </form>
+        <br>
+        <form>
+          Четвертый вопрос?<br>
+          <input id="rb_4_1" type="radio" name="question_4" value="false">
+          <label for="rb_4_1">неправильный ответ</label><br>
+          <input id="rb_4_2" type="radio" name="question_4" value="false">
+          <label for="rb_4_2">неправильный ответ</label><br>
+          <input id="rb_4_3" type="radio" name="question_4" value="false">
+          <label for="rb_4_3">неправильный ответ</label><br>
+          <input id="rb_4_4" type="radio" name="question_4" value="false">
+          <label for="rb_4_4">неправильный ответ</label><br>
+          <input id="rb_4_5" type="radio" name="question_4" value="true">
+          <label for="rb_4_5">правильный ответ</label><br>
+        </form>
+        <br>
+        <form>
+          Пятый вопрос?<br>
+          <input id="rb_5_1" type="radio" name="question_5" value="false">
+          <label for="rb_5_1">неправильный ответ</label><br>
+          <input id="rb_5_2" type="radio" name="question_5" value="false">
+          <label for="rb_5_2">неправильный ответ</label><br>
+          <input id="rb_5_3" type="radio" name="question_5" value="true">
+          <label for="rb_5_3">правильный ответ</label><br>
+          <input id="rb_5_4" type="radio" name="question_5" value="false">
+          <label for="rb_5_4">неправильный ответ</label><br>
+          <input id="rb_5_5" type="radio" name="question_5" value="false">
+          <label for="rb_5_5">неправильный ответ</label><br>
+        </form>
+        <br>
+      </div>
+      <div class="center">
+        <label id="output"></label><br><br>
+        <button id="button" onclick="Check()">Проверить</button><br>
+      </div>
     </main>
+    <script>
+      function Initialize() {
+        document.getElementById("output").innerHTML = "";
+      }
+
+      function Check() {
+        let text = "";
+        text += "Вопрос 1: " + GetResult("question_1") + "<br>";
+        text += "Вопрос 2: " + GetResult("question_2") + "<br>";
+        text += "Вопрос 3: " + GetResult("question_3") + "<br>";
+        text += "Вопрос 4: " + GetResult("question_4") + "<br>";
+        text += "Вопрос 5: " + GetResult("question_5") + "<br>" + "<br>";
+        text += "Процент: " + GetPercent() + "<br>";
+        document.getElementById("output").innerHTML = text;
+      }
+
+      function GetResult(name) {
+        let radios = document.getElementsByName(name);
+        for (let radio of radios) {
+          if (radio.checked && (radio.value == "true")) {
+            return "ответ верен.";
+          }
+          if (radio.checked && (radio.value == "false")) {
+            return "ответ неверен.";
+          }
+        }
+        return "ответ не дан.";
+      }
+
+      function GetPercent() {
+        let percent = 0;
+        let radios = document.querySelectorAll("input");
+        for (let radio of radios) {
+          if (radio.checked && (radio.value == "true")) {
+            percent += 20;
+          }
+        }
+        return percent + " процетов.";
+      }
+    </script>
     <footer>
       <div class="footer_text">
         Задернюк В.А.<br>
