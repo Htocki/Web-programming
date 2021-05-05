@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="local.css">
+    <title>Задание 5</title>
+  </head>
+  <body>
+    <header>
+      <div class="header_text">
+        Web-программирование<br>
+        Лабораторная работа 5
+      </div>
+    </header>
+    <main>
+      <input type="text" id="country" autofocus placeholder="Введите страну">
+	    <div id="autocomplite_list"></div>
+	    <script>
+		  var countries = [
+			"Багамские острова",
+			"Бангладеш",
+			"Барбадос",
+			"Бахрейн",
+			"Белиз",
+			"Беларусь",
+			"Бельгия"
+		  ];
+		  var input = document.getElementById('country');
+		  var list = document.getElementById('autocomplite_list');
+		  input.addEventListener('keyup', complite);
+		  list.addEventListener('click', selectWord);
+		    
+          function selectWord(event) {
+		    var targ = event.target;
+		      if (targ.parentNode === list) {
+			    input.value = targ.innerHTML;
+			    list.style.display = 'none';
+		      }
+		  }
+		
+          function complite() {
+		    var val = input.value.trim().toLowerCase();
+		      if (val) {
+			    var words = countries.filter(function(item) {
+			    return item.toLowerCase().indexOf(val) === 0;
+		      });
+		      list.innerHTML = getComliteHtml(words);
+		      list.style.display = 'block';
+		      positionList();
+		    } else {
+			  list.style.display = 'none';
+            }
+		  }
+
+		  function positionList() {
+		    list.style.width = input.offsetWidth - 2 + 'px';
+		    var XY = input.getBoundingClientRect();
+			list.style.left = XY.left + pageXOffset + 'px';
+			list.style.top = XY.bottom + pageYOffset + 'px';
+		  }
+
+		  function getComliteHtml(words) {
+			var html = "";
+			for (var i = 0; i < words.length; i++) {
+			  html += '<div>' + words[i] + '</div>'
+			}
+			return html;
+		  }
+	    </script>
+    </main>
+    <footer>
+      <div class="footer_text">
+        Задернюк В.А.<br>
+        КФ-4<br>
+        Вариант-4
+      </div>
+    </footer>
+  </body>
+</html>

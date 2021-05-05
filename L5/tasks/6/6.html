@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../global.css">
+    <link rel="stylesheet" href="local.css">
+    <title>Задание 6</title>
+  </head>
+  <body style="height: 450px;" onload="gameStart()">
+    <header>
+      <div class="header_text">
+        Web-программирование<br>
+        Лабораторная работа 5
+      </div>
+    </header>
+    <main>
+      <div id="game">
+        <br>
+        <div id="timer"></div>
+        <table id="game_table"></table>
+        <input type="button" id="restart" value="Повторить">
+      </div>
+      <script>
+        var tableEl = document.getElementById('game_table');
+        var timerEl = document.getElementById('timer');
+        var restartEl = document.getElementById('restart');
+        var paused = false;
+        var now = 0;
+        var timer;
+        var rows = 5;
+        var columns = 5;
+        var time = 75;
+        var restTime = time;
+        restartEl.addEventListener('click', gameRestart);
+        tableEl.addEventListener('click', init);
+        
+        function gameStart() {
+          restartEl.style.display = 'block';
+          create();
+          timerEl.innerHTML = 'Времени осталось: ' + restTime;
+          timer = setInterval(timeStep, 1000);
+        }
+        
+        function gameRestart() {
+          restTime = time;
+          now = 0;
+          clearInterval(timer);
+          gameStart();
+        }
+        
+        function timeStep() {
+          restTime--;
+          if (restTime > 0) {
+            timerEl.innerHTML = 'Времени осталось: ' + restTime;
+          } else {
+            clearInterval(timer);
+            timerEl.innerHTML = 'Вы проиграли';
+            paused = true;
+          }
+        }
+        
+        function init(event) {
+          var targ = event.target;
+          var check = targ.classList.contains('td') &&
+            !targ.classList.contains('select') && !paused;
+          if (check) {
+            var val = +targ.innerHTML;
+            console.log(val, now);
+            if (val === now + 1) {
+              now += 1;
+              targ.classList.add('select');
+              if (val === rows * columns) {
+                timerEl.innerHTML = 'Вы выиграли!';
+                clearInterval(timer);
+              }
+            }	
+          }
+        }
+        
+        function create() {
+          var numbers = getNumbers();
+          var html = '';
+          for (var i = 0; i < rows; i++) {
+            html += '<tr>';
+              for (var j = 0; j < columns; j++) {
+                html += '<td class="td" style="' 
+                  + getRandomStyle() + '">' 
+                  + getRandomNumber(); + '</td>'
+              }
+            html += '</tr>';
+          }
+          tableEl.innerHTML = html;
+          function getRandomNumber() {
+            var n = randomInterval(0, numbers.length - 1);
+            var res = numbers[n]
+            numbers.splice(n, 1);
+            return res;
+          }
+        }
+        
+        function getRandomStyle() {
+          return 'font-size:' + randomInterval(14, 40) + 'px;'
+            + 'color:' + getRandomColor();
+        }
+        
+        function getNumbers() {
+          var numbers = [];
+          for (var i = 0; i < rows*columns; i++) {
+            numbers[i] = i + 1;
+          }
+          return numbers;
+        }
+        
+        function randomInterval(min, max) {
+          return Math.round(Math.random() * (max - min) + min);
+        } 
+        
+        function getRandomColor() {
+          return 'rgb(' + randomInterval(0, 255) + ',' + 
+          randomInterval(0, 255) + ',' + randomInterval(0, 255) + ')';
+        }
+      </script>
+    </main>
+    <footer>
+      <div class="footer_text">
+        Задернюк В.А.<br>
+        КФ-4<br>
+        Вариант-4
+      </div>
+    </footer>
+  </body>
+</html>

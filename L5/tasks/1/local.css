@@ -1,0 +1,32 @@
+button {
+  margin: 1%;
+  height: 46px;
+  width: 56px;
+}
+
+button.clean_button {
+  margin: 2%;
+  margin-right: auto;
+  font-size: 18px;
+  height: 32px;
+  width: 32px;
+}
+
+div.block {
+  border: 2px solid black;
+  margin: 2%;
+  text-align: left;
+}
+
+div.calculator {
+  border: 2px solid black;
+  height: 265px;
+  margin: 4%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 272px;
+}
+
+span {
+  margin-left: 4%;
+}
