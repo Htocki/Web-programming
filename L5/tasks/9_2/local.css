@@ -1,0 +1,37 @@
+#accordion {
+  margin: 3%;
+  font-size: large;
+}
+
+#accordion > h3 {
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  margin: 5px 0;
+  padding: .5em .5em .5em .7em;
+  border: 1px solid #555555;
+  border-radius: 5px;
+  border: 1px solid #363636;
+  background: #b9b8b8;
+  font-weight: normal;
+}
+
+#accordion > h3.select {
+  border: 1px solid #555555;
+  background: #b9b8b8;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+#accordion > div {
+  height: 0;
+  overflow: hidden;
+  color: rgb(0, 0, 0);
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: height .5s;
+}
+
+.tabs_text {
+  font: 13px Arial;
+  text-align: justify;
+}
