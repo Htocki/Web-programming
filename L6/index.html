@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="global.css">
+    <title>Задернюк</title>
+  </head>
+  <body onload="Initialize();_1();_2();_3();_4();_5();_6();_8();_9();_10();_11();_12_1();_12_2();">
+    <header>
+      <div class="header_text">
+        Web-программирование<br>
+        Лабораторная работа 5
+      </div>
+    </header>
+    <main>
+      <div class="board">
+        1. Дана строка 'ahb acb aeb aeeb adcb axeb'. Напишите регулярку, которая найдет строки ahb, acb, aeb по шаблону: буква 'a', любой символ, буква 'b'.
+        <br><input id="input_1" type="text" value="ahb acb aeb aeeb adcb axeb">
+        <br><input id="output_1" type="text">
+      </div>
+      <div class="board">
+        2. Дана строка 'aa aba abba abbba abca abea'. Напишите регулярку, которая найдет строки aa, aba, abba, abbba, не захватив abca abea.
+        <br><input id="input_2" type="text" value="aa aba abba abbba abca abea">
+        <br><input id="output_2" type="text">
+      </div>
+      <div class="board">
+        3. Дана строка '23 2+3 2++3 2+++3 445 677'. Напишите регулярку, которая найдет строки 23, 2+3, 2++3, 2+++3, не захватив остальные.
+        <br><input id="input_3" type="text" value="23 2+3 2++3 2+++3 445 677">
+        <br><input id="output_3" type="text">
+      </div>
+      <div class="board">
+        4. Дана строка 'aba accca azzza wwwwa'. Напишите регулярку, которая найдет все строки по краям которых стоят буквы 'a', и заменит каждую из них на '!'. Между буквами a может быть любой символ (кроме a).
+        <br><input id="input_4" type="text" value="aba accca azzza wwwwa">
+        <br><input id="output_4" type="text">
+      </div>
+      <div class="board">
+        5. Дана строка 'aa aba abba abbba abbbba abbbbba'. Напишите регулярку, которая найдет строки abba, abbba, abbbba и только их.
+        <br><input id="input_5" type="text" value="aa aba abba abbba abbbba abbbbba">
+        <br><input id="output_5" type="text">
+      </div>
+      <div class="board">
+        6. Дана строка 'avb a1b a2b a3b a4b a5b abb acb'. Напишите регулярку, которая найдет строки следующего вида: по краям стоят буквы 'a' и 'b', а между ними - не число.
+        <br><input id="input_6" type="text" value="avb a1b a2b a3b a4b a5b abb acb">
+        <br><input id="output_6" type="text">
+      </div>
+      <div class="board">
+        7. Напишите регулярку, которая найдет строки следующего вида: по краям стоят буквы 'a', а между ними - буква от a до g.
+        <br><input id="input_7" type="text">
+        <br><input type="button" value="Найти" onclick="_7()">
+        <br><input id="output_7" type="text">
+      </div>
+      <div class="board">
+        8. Дана строка 'ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ'. Напишите регулярку, которая найдет все слова по шаблону: любая кириллическая буква любое количество раз.
+        <br><input id="input_8" type="text" value="ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ">
+        <br><input id="output_8" type="text">
+      </div>
+      <div class="board">
+        9. Дана строка 'aaa aaa aaa'. Напишите регулярку, которая заменит последнее 'aaa' на '!'.
+        <br><input id="input_9" type="text" value="aaa aaa aaa">
+        <br><input id="output_9" type="text">
+      </div>
+      <div class="board">
+        10. Дана строка 'aeeea aeea aea axa axxa axxxa'. Напишите регулярку, которая найдет строки следующего вида: по краям стоят буквы 'a', а между ними - или буква 'e' два раза или буква 'x' любое количество раз.
+        <br><input id="input_10" type="text" value="aeeea aeea aea axa axxa axxxa">
+        <br><input id="output_10" type="text">
+      </div>
+      <div class="board">
+        11. Дана строка 'a\a a\\a a\\\a'. Напишите регулярку, которая заменит строку 'a\\\a' на '!'.
+        <br><input id="input_11" type="text" value="a\a a\\a a\\\a">
+        <br><input id="output_11" type="text">
+      </div>
+      <div class="board">
+        12.1 Дана строка 'aaa@bbb eee7@kkk'. Напишите регулярку, которая найдет строки по шаблону: любое количество букв и цифр, символ @, любое количество букв и цифр и поменяет местами то, что стоит до @ на то, что стоит после нее. Например, aaa@bbb должно превратиться в bbb@aaa.
+        <br><input id="input_12_1" type="text" value="aaa@bbb eee7@kkk">
+        <br><input id="output_12_1" type="text">
+      </div>
+      <div class="board">
+        12.2 Дана строка вида 'a1b2c3'. Напишите регулярку, которая найдет все цифры и удвоит их количество таким образом: 'a11b22c33' (то есть рядом с каждой цифрой напишет такую же).
+        <br><input id="input_12_2" type="text" value="a1b2c3">
+        <br><input id="output_12_2" type="text">
+      </div>
+      <div class="board">
+        13. С помощью test определите, что переданная строка является доменом. Примеры доменов: http://site.ru, http://site.com.
+        <br><input id="input_13" type="text">
+        <br><input type="button" value="Проверить" onclick="_13()">
+        <br><input id="output_13" type="text">
+      </div>
+      <div class="board">
+        14.1. С помощью replace замените в строке домены вида http://site.ru, http://site.com на <a href="http://site.ru">site.ru</a>.
+        <br><input id="input_14_1" type="text">
+        <br><input type="button" value="Проверить" onclick="_14_1()">
+        <br><input id="output_14_1" type="text">
+      </div>
+      <div class="board">
+        14.2. С помощью replace замените все повторяющиеся пробелы на один.
+        <br><input id="input_14_2" type="text">
+        <br><input type="button" value="Заменить" onclick="_14_2()">
+        <br><input id="output_14_2" type="text">
+      </div>
+      <div class="board">
+        14.3. Найдите и удалите все комментарии CSS.
+        <br><input id="input_14_3" type="text">
+        <br><input type="button" value="Найти и удалить" onclick="_14_3()">
+        <br><input id="output_14_3" type="text">
+      </div>
+      <div class="board">
+        14.4. Найдите и удалите все комментарии HTML.
+        <br><input id="input_14_4" type="text">
+        <br><input type="button" value="Найти и удалить" onclick="_14_4()">
+        <br><input id="output_14_4" type="text">
+      </div>
+      <div class="board">
+        15. С помощью позитивного и негативного просмотра найдите все строки по шаблону 3 буквы a, затем любая буква, но не b и поменяйте 3 буквы a на знак '!'. То есть из, к примеру, 'aaaw' нужно сделать '!w', а 'aaab' не поменяется.
+        <br><input id="input_15" type="text">
+        <br><input type="button" value="Найти по шаблону" onclick="_15()">
+        <br><input id="output_15" type="text">
+      </div>
+      <div class="board">
+        16. Дана строка '23 + 35 ='. Числа могут быть любыми. Выведите на экран результат операции в виде '23 + 35 = 58'.
+        <br><input id="input_16" type="text" value="23 + 35 =">
+        <br><input type="button" value="Вывести результат" onclick="_16()">
+        <br><input id="output_16" type="text">
+      </div>
+      <div class="board">
+        17. Удалите одной регуляркой все слова из предложения, содержащие две одинаковые следующие друг за другом буквы.
+        <br><input id="input_17" type="text">
+        <br><input type="button" value="Удалить" onclick="_17()">
+        <br><input id="output_17" type="text">
+      </div>
+      <script>
+        function Initialize() {
+          document.getElementById("input_7").value = "assssdda afa agga alkkla";
+          document.getElementById("output_7").value = "";
+          document.getElementById("input_13").value = "http://site.ru";
+          document.getElementById("output_13").value = "";
+          document.getElementById("input_14_1").value = "http://site.com";
+          document.getElementById("output_14_1").value = "";
+          document.getElementById("input_14_2").value = "sdfg     f fff sgfgsf             sfgsdfgs    sfdgsdfgs";
+          document.getElementById("output_14_2").value = "";
+          document.getElementById("input_14_3").value = "dsfsdf /*sdfsdf*/ sdfsdf //sdfsdfsdf";
+          document.getElementById("output_14_3").value = "";
+          document.getElementById("input_14_4").value = "gkgkhg <!--kjghgkhk--> khlkjhljkh <!--hgh-->";
+          document.getElementById("output_14_4").value = "";
+          document.getElementById("input_15").value = "aaaw aaab";
+          document.getElementById("output_15").value = "";
+          document.getElementById("input_16").value = "23 + 35 =";
+          document.getElementById("output_16").value = "";
+          document.getElementById("input_17").value = "sdfghjk aaa ghjk zzqzqaq hsdds. ghjkl";
+          document.getElementById("output_17").value = "";
+        }
+        function _1() {
+          let text = document.getElementById("input_1").value;
+          let converted = text.match(/a.b/g);
+          document.getElementById("output_1").value = converted;
+        }
+        function _2() {
+          let text = document.getElementById("input_2").value;
+          let converted = text.match(/ab*a/g);
+          document.getElementById("output_2").value = converted;
+        }
+        function _3() {
+          let text = document.getElementById("input_3").value;
+          let converted = text.match(/2\+*3/g);
+          document.getElementById("output_3").value = converted;
+        }
+        function _4() {
+          let text = document.getElementById("input_4").value;
+          let converted = text.replace(/a[^\s]*a/g, "!");
+          document.getElementById("output_4").value = converted;
+        }
+        function _5() {
+          let text = document.getElementById("input_5").value;
+          let converted = text.match(/ab{2,4}a/g);
+          document.getElementById("output_5").value = converted;
+        }
+        function _6() {
+          let text = document.getElementById("input_6").value;
+          let converted = text.match(/a[^\d]b/g);
+          document.getElementById("output_6").value = converted;
+        }
+        function _7() {
+          let text = document.getElementById("input_7").value;
+          let converted = text.match(/a[a-g]a/g);
+          document.getElementById("output_7").value = converted;
+        }
+        function _8() {
+          let text = document.getElementById("input_8").value;
+          let converted = text.match(/[а-яА-ЯёЁ]*[^\s]/g);
+          document.getElementById("output_8").value = converted;
+        }
+        function _9() {
+          let text = document.getElementById("input_9").value;
+          let converted = text.replace(/a*a$/g, "!");
+          document.getElementById("output_9").value = converted;
+        }
+        function _10() {
+          let text = document.getElementById("input_10").value;
+          let converted = text.match(/a(ee|x)*a/g);
+          document.getElementById("output_10").value = converted; 
+        }
+        function _11() {
+          let text = document.getElementById("input_11").value;
+          let converted = text.replace(/a\\{3}a$/g, "!");
+          document.getElementById("output_11").value = converted;
+        }
+        function _12_1() {
+          let text = document.getElementById("input_12_1").value;
+          let converted = text.replace(/(\w+)@(\w+)/g, "$2@$1");
+          document.getElementById("output_12_1").value = converted;
+        }
+        function _12_2() {
+          let text = document.getElementById("input_12_2").value;
+          let converted = text.replace(/(\d)/g, "$1$1");
+          document.getElementById("output_12_2").value = converted;
+        }
+        function _13() {
+          let text = document.getElementById("input_13").value;
+          if (/(http:\/\/){1}[a-zA-Z]*\.{1}(ru|com)$/.test(text)) {
+            document.getElementById("output_13").value = "Является.";
+          } else {
+            document.getElementById("output_13").value = "Не является.";
+          }
+        }
+        function _14_1() {
+          let text = document.getElementById("input_14_1").value;
+          let converted = text.replace(
+            /(http:\/\/){1}([a-zA-Z]*\.{1}(ru|com)$)/g,
+            "<a href=\"http:\/\/site\.ru\">site\.ru<\/a>"
+          );
+          document.getElementById("output_14_1").value = converted;
+        }
+        function _14_2() {
+          let text = document.getElementById("input_14_2").value;
+          let converted = text.replace(/\s+/g, " ");
+          document.getElementById("output_14_2").value = converted;
+        }
+        function _14_3() {
+          let text = document.getElementById("input_14_3").value;
+          let converted = text.replace(/(\/*.*\*\/)|(\/\/.)/g, "");
+          document.getElementById("output_14_3").value = converted;
+        }
+        function _14_4() {
+          let text = document.getElementById("input_14_4").value;
+          let converted = text.replace(/(<!--)[^(-->)]*(-->)/g, "");
+          document.getElementById("output_14_4").value = converted;
+        }
+        function _15() {
+          let text = document.getElementById("input_15").value;
+          let converted = text.replace(/aaa(?!b)/g, "!");
+          document.getElementById("output_15").value = converted;
+        }
+        function _16() {
+          let text = document.getElementById("input_16").value;
+          let converted = text.replace(
+            /(\d+)\s\+\s(\d+)\s=/g,
+            function (magic_a, magic_b, magic_c) {
+	            return magic_a + " " + (parseInt(magic_b) + parseInt(magic_c));
+            }
+          );
+          document.getElementById("output_16").value = converted;
+        }
+        function _17() {
+          let text = document.getElementById("input_17").value;
+          let converted = text.replace(/\w*(\w)\1\w*/g, "");
+          document.getElementById("output_17").value = converted;
+        }
+      </script>
+    </main>
+    <footer>
+      <div class="footer_text">
+        Задернюк В.А.<br>
+        КФ-4<br>
+        Вариант-4
+      </div>
+    </footer>
+  </body>
+</html>

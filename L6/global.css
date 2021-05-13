@@ -1,0 +1,42 @@
+body {
+  margin-bottom: 1%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 1%;
+  font-size: 20px;
+}
+      
+header {
+  border: 2px solid black;
+}
+      
+main {
+  border: 2px solid black;
+  margin: 2%;
+  font-size: medium;
+  text-align: center;
+}
+
+input {
+  margin: 1%;
+  width: 300px;
+}
+      
+footer {
+  border: 2px solid black;
+}
+
+div.board {
+  border: 2px solid black;
+  margin: 2%;
+}
+
+div.header_text {
+  margin: 1px;
+}
+      
+div.footer_text {
+  margin: 1px;
+  margin-left: auto;
+  width: 8em;
+}
